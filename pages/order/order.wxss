@@ -1,0 +1,102 @@
+.order{
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+.od-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 30rpx;
+}
+.on-text{
+  width: 4em;
+  text-align: center;
+}
+.on-line{
+  width: 2.5em;
+  height: 6rpx;
+  background: #04a9a3;
+  margin:  0 auto;
+  margin-top: 24rpx;
+  opacity: 0;
+}
+.on-text:first-child .on-line{
+  width: 3.5em;
+}
+.on-act .on-line{
+  opacity: 1;
+}
+.od-list{
+  background: #fff;
+  padding: 10px 4vw;
+  margin-bottom: 10px;
+}
+.ol-head{
+  display: flex;
+  align-items: center;
+}
+.ol-head>image,.blank{
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  margin-right: 2vw;
+}
+.ol-status{
+  display: flex;
+  align-items: center;
+}
+.ol-line{
+  border-top: 1px dotted #b8b8b8;
+  width: 50vw;
+}
+.ol-status text{
+  font-size: 28rpx;
+  color: #fff;
+  background: #04a9a3;
+  border-radius:15px;
+  width: 26vw;
+  padding: 8rpx 0;
+  text-align: center;
+}
+.ol-status text.nopay{
+  background: #00c666;
+}
+.od-main{
+  display: flex;
+  align-items: flex-start;
+}
+.om-money{
+  overflow: hidden;
+  color: #00c666;
+  margin-bottom: 10px;
+}
+.om-money image{
+  width: 36rpx;
+  height: 36rpx;
+  float: left;
+}
+.om-dt{
+  width: 77vw;
+  overflow: hidden;
+}
+.om-text{
+  display: flex;
+  align-items: flex-start;
+  color: #707070;
+  font-size: 30rpx;
+}
+.om-text image{
+  width: 32rpx;
+  height: 32rpx;
+  
+}
+.om-text image:first-child{
+  margin-right: 10px;
+  width: 48rpx;
+  height: 38rpx;
+}
+.om-click{
+  float: right;
+  color: #04a9a3;
+  margin-top: 5px;
+}

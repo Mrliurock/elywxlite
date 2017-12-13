@@ -1,0 +1,23 @@
+<view class="ordetail">
+  <view class='odt-head'>
+    <image src='../../imgs/hot-tu.jpg'></image>
+    <view class='oh-dt'>
+      <view>年度VIP会员</view>
+      <view class='oh-price'>
+        <view class='oh-line'></view>
+        <text>￥120</text>
+      </view>
+      <text>待支付</text>
+    </view>
+  </view>
+  <view class='odt-info'>
+    <view class='oi-head'>订单详细信息</view>
+    <view class='oi-dt'>
+      <view><text>订单号:</text>10011236</view>
+      <view><text>日期:</text>2017-01-29</view>
+      <view><text>支付方式:</text>微信支付</view>
+      <view><text>使用优惠卷:</text>0张</view>
+      <view><text>激活码:</text>100236</view>
+    </view>
+  </view>
+</view>

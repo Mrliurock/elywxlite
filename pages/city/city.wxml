@@ -1,0 +1,39 @@
+<view class='city'>
+  <view class='ct-search'>
+    <view class='search'>
+      <icon type='search' size='18' color='#04a9a3'></icon>
+      <input type='text' placeholder='广州' confirm-type='search' bindinput='inputchange'></input>
+    </view>
+  </view>
+  <view class='ct-main' hidden='{{ifsearch}}'>
+     <scroll-view scroll-y bindscroll="scroll" scroll-top='{{scrollTop}}' scroll-with-animation>
+        <view class='hot-ct'>
+          <view class='hot-text'>热门城市</view>
+          <view class='hot-lists'>
+            <view class='hot-list' wx:for='{{hotList}}' wx:key='{{areacode}}' bindtap='chooseCity' data-ct='{{item.areacode}}'>{{item.areaname}}</view>
+          </view>
+        </view>
+        <view class='ct-all'>
+          <view class='ct-class' wx:for='{{cityList}}' wx:key='{{index}}' id='{{index}}'>
+            <view class='ct-letter'>{{index}}</view>
+            <view class='ct-dt' wx:for='{{item}}' wx:key='{{areacode}}' bindtap='chooseCity' data-ct='{{item.areacode}}'>
+              <image src='{{fileUrl+item.thumbimg}}'></image>
+              <text>{{item.areaname}}</text>
+            </view>
+          </view>
+        </view>
+     </scroll-view>
+  </view>
+  <view class='letters' hidden='{{ifsearch}}'>
+    <view class='letter' bindtap='moveTop'>热门</view>
+    <view class="letter {{ctlter==index?'active':''}}" wx:for='{{cityList}}' wx:key='{{index}}' data-ct='{{index}}' bindtap='toCity'>{{index}}</view>
+  </view>
+  <view class='search-list' wx:if='{{ifsearch}}'>
+    <view class='ct-dt' wx:for='{{searchList}}' wx:key='{{areacode}}' bindtap='chooseCity' data-ct='{{item.areacode}}'>
+      <image src='{{fileUrl+item.thumbimg}}'></image>
+      <text>{{item.areaname}}</text>
+    </view>
+    <view class='no-search' wx:if='{{!searchList.length}}'>抱歉，目前找不到该城市。</view>
+  </view>
+  <view class="showlt {{ctclick?'show':''}}">{{ctlter}}</view>
+</view>

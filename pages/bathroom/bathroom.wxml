@@ -1,0 +1,14 @@
+<view class='bathroom'>
+  <map latitude='{{lat}}' longitude='{{lng}}' markers='{{markers}}'></map>
+  <scroll-view scroll-y>
+    <view class='rooms'>
+      <view class='room' wx:for="{{bathrooms}}" wx:key="id" data-poi="{{item}}" bindtap='viewAddr'>
+        <view>
+          <text>{{index+1}}.{{item.address}}</text>
+          <view class='addr'><image src='../../imgs/address.png'></image>距离{{item.distance}}米</view>
+        </view>
+        <image src='../../imgs/right.png'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>

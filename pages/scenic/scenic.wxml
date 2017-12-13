@@ -1,0 +1,133 @@
+<view class="loading" wx:if="{{loading}}">
+  <image src='../../imgs/ld.gif'></image>
+</view>
+<view class='scenic'>
+  <view class='sn-banner'>
+    <image src="{{spotinfo.image?fileUrl+spotinfo.image:'../../imgs/blank.png'}}"></image>
+    <view class='bn-text'>
+      <view class="{{spotinfo.name.length>6?'toolong':''}}">
+        <text>{{spotinfo.name}}</text>
+        <view class='bn-dis'>
+          <image src='../../imgs/address.png'></image>距离：{{distance}}</view>
+      </view>
+      <view>
+        <!-- <view class='bn-qj'><image src='../../imgs/qj.png'></image>全景</view> -->
+        <view class='bn-qj' bindtap='lineModal' data-status='open'><image src='../../imgs/line.png'></image>路线</view>
+        <view class='bt-code' bindtap='buyModal' data-status='open'>购买</view>
+      </view>
+    </view>
+  </view>
+  <view class='sn-text'>
+    <text decode="{{true}}" style='height:{{ttheight}}' space>{{spotinfo.introduction}}</text>
+    <image src="../../imgs/{{ttimg}}.png" data-dt='{{ttimg}}' bindtap='allText'></image>
+  </view>
+  <view class='sn-lists'>
+    <view class='sn-list' wx:for="{{scenicPois}}" wx:key="id" bindtap='playThisPoi' data-tp='{{item}}' data-adplay="{{adplay}}">
+      <view class='sl-img'>
+        <image src="{{item.imageurl?fileUrl+item.imageurl:('../../imgs/blank.png')}}" class="{{item.charge?'imggray':''}}"></image>
+      </view>
+      <view class='sl-text'>{{item.name}}</view>
+      <view class="tryplay {{item.noAd?'locked':''}}" wx:if="{{!item.locked}}">
+        <image src='../../imgs/voice.png'></image>试听</view>
+      <view class='locked' wx:if="{{item.locked}}">
+        <image src='../../imgs/lock.png'></image>解锁</view>
+      <!-- <view class="bn-qj {{item.charge?'gray':''}}"><image src="../../imgs/{{item.charge?'gqj':'qj'}}.png"></image>全景</view> -->
+      <image src="../../imgs/{{item.locked||item.noAd?'gplay':(item.id==thisPoi.id?(adplay?'pause':'play'):'play')}}.png" class='ifplay'></image>
+    </view>
+  </view>
+  <view class='audio-play'>
+    <view class='ap-btn' bindtap='playAD' data-adplay="{{adplay}}">
+      <image animation="{{amdata}}" class="ap-img" src="{{thisPoi.imageurl?fileUrl+thisPoi.imageurl:('../../imgs/blank.png')}}"></image>
+      <image src="../../imgs/{{adplay?'spause':'splay'}}.png" class='smplay'></image>
+    </view>
+    <view class="ap-slider">
+      <slider activeColor='#04a9a3' bindchange="apChange" value="{{advalue}}" max="{{maxvalue}}" />
+    </view>
+    <view class='adtime'>{{adtime}}</view>
+    <view class='language' bindtap='langModal' data-status='open'>{{thisLang.soundname}}</view>
+  </view>
+  <!-- <audio id="snAudio" src='{{adsrc}}' bindtimeupdate="adtimeupdata" bindended="adended"></audio> -->
+</view>
+<view class='model' bindtap='langModal' wx:if="{{langModalStatus}}" data-status='close'></view>
+<view animation="{{animationData}}" class='langModal' wx:if="{{langModalStatus}}">
+  <view class='lm-head'>语言类型</view>
+  <radio-group class="lang-lists" bindchange="langChange">
+    <label class="lang-list" wx:for="{{soundTypes}}" wx:key="scode" bindtap='clickLang'>
+      <view class='lang-img'>
+        <image src='../../imgs/{{item.scode}}.png'></image>{{item.soundname}}</view>
+      <radio value="{{item.scode}}" checked="{{item.scode==thisLang.scode}}" color="#04a9a3" />
+    </label>
+  </radio-group>
+</view>
+<view class='model' bindtap='buyModal' wx:if="{{buyModalStatus}}" data-status='close'></view>
+<view animation="{{animationData}}" class='buyModal' wx:if="{{buyModalStatus}}">
+  <view wx:if="{{!atClick}}">
+    <view class='bm-head'>语言包购买</view>
+    <view class='bm-main'>
+      <view class='bm-two'>
+        <view class='bm-buy' bindtap='toPay'>
+          <image src="../../imgs/paynow.png"></image>
+          <text>立即支付</text>
+        </view>
+        <view class='bm-buy' bindtap='clickAC'>
+          <image src="../../imgs/active.png"></image>
+          <text>授权码激活</text>
+        </view>
+      </view>
+      <view class='bm-text'>购买或者激活后可以听取景区所有语音讲解</view>
+    </view>
+  </view>
+  <view wx:if="{{atClick}}">
+    <view class='bm-head' hidden="{{codeClick}}">授权码激活</view>
+    <view class='ca-main' hidden="{{codeClick}}">
+      <view class='ca-input'>
+        <input type='number' placeholder='请输入授权码' bindinput='codeInput'></input>
+        <view class='bt-code' bindtap='testCode' data-cd='{{codeValue}}'>验证</view>
+      </view>
+      <view class='ca-text'>请输入
+        <text>授权码</text>或
+        <text>短信验证码</text>
+      </view>
+      <view class='ca-buy'>
+        <text>还没有授权码?</text>
+        <view bindtap='toPay'>立即购买</view>
+      </view>
+    </view>
+    <view class='ca-head' wx:if="{{codeClick}}">系统提示</view>
+    <view class='ca-test' wx:if="{{codeClick}}">
+      <view class='ca-msg'>
+        <image wx:if="{{codeSucc}}" src='../../imgs/suc.png'></image>
+        <icon wx:else type='cancel' size='30'></icon>{{testCodeMsg}}！</view>
+      <view class='bt-code' bindtap='codeConfirm' data-cdstatus='{{codeSucc}}'>确定</view>
+    </view>
+  </view>
+</view>
+
+<view class='model' bindtap='lineModal' wx:if="{{lineModalStatus}}" data-status='close'></view>
+<view animation="{{animationData}}" class='lineModal' wx:if="{{lineModalStatus}}">
+  <view class='line-head'>景区线路 <image src='../../imgs/x.png' bindtap='lineModal' data-status='close'></image></view>
+  <view class='of'>
+    <view class='line-lists'>
+      <view class="line-list {{lineid==item.id?'line-at':''}}" wx:for="{{lineList}}" wx:key="id" bindtap='chooseLine' data-id='{{item.id}}'>{{item.name}}</view>
+    </view>
+    <view class='line-detail'>
+      <text>（途径{{lineDetail.routePois.length}}个景点 | 约{{lineDetail.distotal?lineDetail.distotal:'0米'}} | 步行约{{lineDetail.time?lineDetail.time:'0小时'}}）</text>
+      <scroll-view scroll-y class='l-details' scroll-top="{{scrollTop}}">
+        <view class='l-detail' wx:for="{{lineDetail.routePois}}" wx:key="id">
+          <view class='ld-dt'>
+            <view class='ld-c1'>
+              <view>
+                <image src='../../imgs/hot-tu.jpg' class='line-img'></image>
+              </view>
+            </view>
+            <view class='ld-td'>
+              <view class="ld-name">{{item.name}}</view>
+              <view class='ld-addr'><image src="../../imgs/address.png"></image>约{{item.dis?item.dis:'0米'}}</view>
+            </view>
+          </view>
+          <view class='line-border'></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

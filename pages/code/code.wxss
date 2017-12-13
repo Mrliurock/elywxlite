@@ -1,0 +1,42 @@
+.code{
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+.c-list{
+  background: #fff;
+  padding: 20px 15px;
+  position: relative;
+  margin-bottom: 15px;
+}
+.c-list>view{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.c-list view:nth-child(5){
+  margin-bottom: 0;
+}
+.c-list view:last-child{
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.c-list view image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 30rpx;
+}
+.c-list view text{
+  display: inline-block;
+  width: 6em;
+  color: #8c8c8c;
+}
+.copy{
+  padding: 5px 15px;
+  color: #fff;
+  background: #04a9a3;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  font-size: 30rpx;
+}

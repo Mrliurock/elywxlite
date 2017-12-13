@@ -1,0 +1,32 @@
+<view class="search">
+  <view class='sc-input'>
+    <view class='sc-sc'>
+      <icon type='search' size='18' color='#04a9a3'></icon>
+      <input placeholder='北京故宫' bindinput='codeInput'></input>
+    </view>
+    <view class='bt-code' bindtap='testCode' data-cd='{{codeValue}}'>搜索</view>
+  </view>
+  <view class='sc-hot'>
+    <view class='hot-text'>热门城市</view>
+    <view class='hot-lists'>
+      <view class='hot-list' wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="item">迪士尼哈</view>
+    </view>
+  </view>
+  <view class='sc-results'>
+    <view class='hot-text'>搜索结果</view>
+    <view class='rl-lists'>
+      <view class='rl-list'>
+        越秀公园
+      </view>
+      <view class='rl-list'>
+        天河公园
+      </view>
+      <view class='rl-list'>
+        越秀公园
+      </view>
+      <view class='rl-list'>
+        天河公园
+      </view>
+    </view>
+  </view>
+</view>

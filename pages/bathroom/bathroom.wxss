@@ -1,0 +1,29 @@
+map{
+  width: 100%;
+  height: 60vh;
+}
+scroll-view{
+  width: 100%;
+  height: 40vh;
+}
+.room{
+  padding: 14rpx 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8e8;
+}
+.room>image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.addr{
+  display: flex;
+  align-items: center;
+  color: #a5a5a5;
+  font-size: 28rpx;
+}
+.addr image{
+  width: 30rpx;
+  height: 30rpx;
+}

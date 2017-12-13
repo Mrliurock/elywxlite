@@ -1,0 +1,18 @@
+<view class='code'>
+  <view class='c-list'>
+    <view><image src='../../imgs/no.png'></image><text>编号：</text>0201 19829 111</view>
+    <view><image src='../../imgs/date.png'></image><text>有效期：</text>一年</view>
+    <view><image src='../../imgs/type.png'></image><text>类型：</text>VIP</view>
+    <view><image src='../../imgs/sdate.png'></image><text>购买日期：</text>2017-06-17</view>
+    <view><image src='../../imgs/edate.png'></image><text>到期日期：</text>2018-06-18</view>
+    <view class='copy'>快速复制</view>
+  </view>
+  <view class='c-list'>
+    <view><image src='../../imgs/no.png'></image><text>编号：</text>0201 19829 111</view>
+    <view><image src='../../imgs/date.png'></image><text>有效期：</text>一年</view>
+    <view><image src='../../imgs/type.png'></image><text>类型：</text>VIP</view>
+    <view><image src='../../imgs/sdate.png'></image><text>购买日期：</text>2017-06-17</view>
+    <view><image src='../../imgs/edate.png'></image><text>到期日期：</text>2018-06-18</view>
+    <view class='copy'>快速复制</view>
+  </view>
+</view>

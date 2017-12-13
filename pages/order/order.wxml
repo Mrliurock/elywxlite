@@ -1,0 +1,69 @@
+<view class='order'>
+  <view class='od-nav'>
+    <view class="on-text {{nav==1?'on-act':''}}" bindtap='navClick' data-nav='1'>所有订单<view class='on-line'></view></view>
+    <view class="on-text {{nav==2?'on-act':''}}" bindtap='navClick' data-nav='2'>待支付<view class='on-line'></view></view>
+    <view class="on-text {{nav==3?'on-act':''}}" bindtap='navClick' data-nav='3'>已完成<view class='on-line'></view></view>
+  </view>
+  <view class='od-all' hidden="{{nav!=1}}">
+    <view class='od-list' bindtap='toOrdetail'>
+      <view class='ol-head'>
+        <image src="../../imgs/hot-tu.jpg"></image>
+        <view class='ol-name'><text>年度VIP会员</text><view class='ol-status'><view class='ol-line'></view><text>订单完成</text></view></view>
+      </view>
+      <view class='od-main'>
+        <view class='blank'></view>
+        <view class='om-dt'>
+          <view class='om-money'><image src='../../imgs/qdai.png'></image>￥120</view>
+          <view class='om-text'><image src='../../imgs/dt.png'></image><text>订单详情订单详情订单详情订单详情订单详情订单详情</text><image src="../../imgs/ra.png"></image></view>
+          <view class='om-click'>查看详情</view>
+        </view>
+      </view>
+    </view>
+    <view class='od-list' bindtap='toOrdetail'>
+      <view class='ol-head'>
+        <image src="../../imgs/hot-tu.jpg"></image>
+        <view class='ol-name'><text>月度VIP会员</text><view class='ol-status'><view class='ol-line'></view><text class="nopay">未支付</text></view></view>
+      </view>
+      <view class='od-main'>
+        <view class='blank'></view>
+        <view class='om-dt'>
+          <view class='om-money'><image src='../../imgs/qdai.png'></image>￥120</view>
+          <view class='om-text'><image src='../../imgs/dt.png'></image><text>订单详情订单详情订单详情订单详情订单详情订单详情</text><image src="../../imgs/ra.png"></image></view>
+          <view class='om-click'>查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='od-stay' wx:if="{{nav==2}}">
+    <view class='od-list'>
+      <view class='ol-head'>
+        <image src="../../imgs/hot-tu.jpg"></image>
+        <view class='ol-name'><text>月度VIP会员</text><view class='ol-status'><view class='ol-line'></view><text class="nopay">未支付</text></view></view>
+      </view>
+      <view class='od-main'>
+        <view class='blank'></view>
+        <view class='om-dt'>
+          <view class='om-money'><image src='../../imgs/qdai.png'></image>￥120</view>
+          <view class='om-text'><image src='../../imgs/dt.png'></image><text>订单详情订单详情订单详情订单详情订单详情订单详情</text><image src="../../imgs/ra.png"></image></view>
+          <view class='om-click'>查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='od-done' wx:if="{{nav==3}}">
+    <view class='od-list'>
+      <view class='ol-head'>
+        <image src="../../imgs/hot-tu.jpg"></image>
+        <view class='ol-name'><text>年度VIP会员</text><view class='ol-status'><view class='ol-line'></view><text>订单完成</text></view></view>
+      </view>
+      <view class='od-main'>
+        <view class='blank'></view>
+        <view class='om-dt'>
+          <view class='om-money'><image src='../../imgs/qdai.png'></image>￥120</view>
+          <view class='om-text'><image src='../../imgs/dt.png'></image><text>订单详情订单详情订单详情订单详情订单详情订单详情</text><image src="../../imgs/ra.png"></image></view>
+          <view class='om-click'>查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

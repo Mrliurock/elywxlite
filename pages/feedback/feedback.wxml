@@ -1,0 +1,23 @@
+<view class='feedback'>
+  <form>
+    <view class='fd-head'>意见反馈</view>
+    <view class='fd-ta'>
+      <textarea placeholder="请描述您的疑惑...." maxlength='300' bindinput="cmvalue" />
+    </view>
+    <view class='fd-text'>联系方式（手机号/QQ/微信）</view>
+    <view class='fd-input'>
+      <input type="number" bindinput="ctvalue"></input>
+    </view>
+    <view class='fd-text'>联系人</view>
+    <view class='fd-input'>
+      <input bindinput="lmvalue"></input>
+    </view>
+    <view class='fd-img'>
+      <image src="{{item}}" wx:for="{{fdImg}}" wx:key="*this"></image>
+      <view bindtap='addImg'>+</view>
+    </view>
+    <view class='submit'>
+      <button form-type='reset' bindtap='submit'>提交</button>
+    </view>
+  </form>
+</view>

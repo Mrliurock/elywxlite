@@ -1,0 +1,46 @@
+<view class='pay'>
+  <view class='p-head'>
+    <text>语言包购买</text>
+    <image src='../../imgs/x.png'></image>
+  </view>
+  <view class='p-price'>
+    <view>25.00元</view>
+    <text>立即支付，可听取景区所有语音讲解</text>
+  </view>
+  <view class='p-detail'>
+    <view class='pd-list'>景区名称
+      <text>越秀公园</text>
+    </view>
+    <view class='pd-list'>产品
+      <text>语音数据包</text>
+    </view>
+    <view class='pd-list'>数量
+      <text>20个</text>
+    </view>
+  </view>
+  <view class='p-protocol'>
+    <checkbox-group>
+      <label>
+        <checkbox value='' checked color='#fff' />购买协议
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='p-banner'>
+    <image src='../../imgs/jfq.jpg'></image>
+    <text>支付方式</text>
+  </view>
+  <view class="pay-modes">
+    <checkbox-group>
+      <label>
+        <view class='pay-mode'>
+          <image src='../../imgs/wx.png'></image>
+          <text>微信</text>
+        </view>
+        <checkbox value='' checked color='#fff' />
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='goPay'>
+    <button>去支付</button>
+  </view>
+</view>

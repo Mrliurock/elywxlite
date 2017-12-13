@@ -1,0 +1,135 @@
+.city{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ct-search{
+  width: 100%;
+  height: 7vh;
+  background-color:#f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search{
+  width: 90%;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:20px;
+  background: #fff;
+}
+.search>icon{
+  margin-left:10px;
+  margin-right: 5px;
+}
+.search>input {
+height:28px;
+line-height:28px;
+font-size:14px;
+flex: 1;
+}
+.ct-main{
+  flex: 1;
+  width: 100%;
+}
+.ct-main>scroll-view{
+  height:93vh; 
+  width: 100%;
+}
+.hot-ct{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.hot-text{
+  margin-left: 15px;
+  border-left: 2px solid #04a9a3;
+  padding-left: 8px;
+  margin-bottom: 15px;
+  color: #999;
+}
+.hot-lists{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot-list{
+  width: 20vw;
+  margin-left: 4vw;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid #04a9a3;
+  border-radius: 5px;
+  font-size: 26rpx;
+  padding: 4px 0;
+  color: #04a9a3;
+  background-color: #f0fafb;
+}
+.ct-letter{
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #f5f5f5;
+  font-weight: 600;
+  padding-left: 15px;
+}
+.ct-dt{
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+.ct-dt>image{
+  width: 6em;
+  height: 4em;
+  border-radius: 5px;
+  margin: 10px 15px 10px 10px;
+}
+.letters{
+  position:fixed; 
+  right:0; 
+  top:50%; 
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  text-align: center; 
+  background: #FFF; 
+  padding:0px 3px;
+}
+.letter:first-child{
+  font-size: 24rpx;
+}
+.letter{
+  font-size: 28rpx;
+  color: #04a9a3;
+}
+.active{
+  background-color:rgba(4, 169, 163, 0.5);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.showlt{
+  width: 160rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 40rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+   display: none;
+}
+.search-list{
+  width: 100%;
+}
+.no-search{
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 30px;
+}

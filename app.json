@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/city/city",
+    "pages/search/search",
+    "pages/scenic/scenic",
+    "pages/bathroom/bathroom",
+    "pages/feedback/feedback",
+    "pages/charge/charge",
+    "pages/code/code",
+    "pages/ordetail/ordetail",
+    "pages/order/order",
+    "pages/pay/pay"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#04a9a3",
+    "navigationBarTitleText": "翼旅游",
+    "navigationBarTextStyle": "white"
+  }
+}
